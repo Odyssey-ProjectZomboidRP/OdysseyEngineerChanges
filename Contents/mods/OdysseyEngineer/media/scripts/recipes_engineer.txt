@@ -18,18 +18,33 @@ module Base
         Time:15.0,
     }
 
-        recipe Make Shotgun Shells Mold
+    recipe Make Shotgun Shells Mold
     {
-       IronIngot=30,
+       ScrapMetal=5,
        keep BallPeenHammer,
-       keep Tongs,
+       keep WeldingMask,
+       BlowTorch=1,
 
-       NearItem:Anvil,
        Result:ShotgunShellsMold,
        Time:200.0,
-       Category:Smithing,
-       SkillRequired:Blacksmith=8,
-       OnGiveXP:Recipe.OnGiveXP.Blacksmith25,
+       Category:MetalWelding,
+       SkillRequired:MetalWelding=4,
+       OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
+       NeedToBeLearn:true,
+    }
+
+    recipe Make 9mm Bullets Mold
+    {
+       ScrapMetal=5,
+       keep BallPeenHammer,
+       keep WeldingMask,
+       BlowTorch=1,
+
+       Result:ShotgunShellsMold,
+       Time:200.0,
+       Category:MetalWelding,
+       SkillRequired:MetalWelding=4,
+       OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
        NeedToBeLearn:true,
     }
 
