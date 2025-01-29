@@ -140,12 +140,23 @@ end
 
 
 ---@param player IsoPlayer The player who joined the game
---- This function adds Engineer recipes to the player when they join the game
+--[[
+This function adds `SandboxVars.TOC_Engineer.EngineerRecipes` recipes to the player if they have the `engineer` profession when they join the game
+It can also be added to `SandboxVars.TOC_Engineer.engineerProfession` or the list `SandboxVars.TOC_Engineer.EngineersProfList`
+]]
 ---@return void
 function AddEngineerRecipes(player)
-    if (player:getProfession() == "engineer") then
+    if (player:getProfession() == "engineer" or (SandboxVars.TOC_Engineer.engineerProfession ~= nil and player:getProfession() == SandboxVars.TOC_Engineer.engineerProfession)) then
         player:setFreeRecipes(SandboxVars.TOC_Engineer.EngineerRecipes)
+    else if (SandboxVars.TOC_Engineer.EngineersProfList ~= nil) then
+            for i = 1, #SandboxVars.TOC_Engineer.EngineersProfList do
+                if (player:getProfession() == SandboxVars.TOC_Engineer.EngineersProfList[i]) then
+                    player:setFreeRecipes(SandboxVars.TOC_Engineer.EngineerRecipes)
+                end
+            end
     end
+end
+
 end
 
 Events.OnGameBoot(AddEngineerRecipes(player));
