@@ -27,7 +27,6 @@ function CorrectAmmoType(weapon)
     -- "OdysseyExploShells",
     -- "OdysseyExplo44",
 
-
     for i = 1, #listOfAmmos do
         if ammo == listOfAmmos[i] then
             return true
@@ -53,8 +52,8 @@ end
 ---@return Caliber int The caliber (type) of the weapon
 ---@param player IsoPlayer The player
 --[[ We get the `Caliber` used by `StartFire(posX, posY, posZ, radius)`. It can either be
-`SandboxVars.TOC_Engineer.ShotgunFireRadius` or `SandboxVars.TOC_Engineer.PistolFireRadius` depending on the*
-caliber
+`SandboxVars.TOC_Engineer.ShotgunFireRadius` or `SandboxVars.TOC_Engineer.PistolFireRadius` depending on the
+caliber. The list of default ammos is `SandboxVars.TOC_Engineer.ListAmmos`
 ]]
 function GetCaliber(player)
     local listOfAmmos = SandboxVars.TOC_Engineer.ListAmmos
@@ -142,11 +141,11 @@ end
 ---@param player IsoPlayer The player who joined the game
 --[[
 This function adds `SandboxVars.TOC_Engineer.EngineerRecipes` recipes to the player if they have the `engineer` profession when they join the game
-It can also be added to `SandboxVars.TOC_Engineer.engineerProfession` or the list `SandboxVars.TOC_Engineer.EngineersProfList`
+It can also be added to `SandboxVars.TOC_Engineer.EngineerProfession` or the list `SandboxVars.TOC_Engineer.EngineersProfList`
 ]]
 ---@return void
 function AddEngineerRecipes(player)
-    if (player:getProfession() == "engineer" or (SandboxVars.TOC_Engineer.engineerProfession ~= nil and player:getProfession() == SandboxVars.TOC_Engineer.engineerProfession)) then
+    if (player:getProfession() == "engineer" or (SandboxVars.TOC_Engineer.EngineerProfession ~= nil and player:getProfession() == SandboxVars.TOC_Engineer.engineerProfession)) then
         player:setFreeRecipes(SandboxVars.TOC_Engineer.EngineerRecipes)
     else if (SandboxVars.TOC_Engineer.EngineersProfList ~= nil) then
             for i = 1, #SandboxVars.TOC_Engineer.EngineersProfList do
