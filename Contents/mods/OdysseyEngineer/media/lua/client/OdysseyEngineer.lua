@@ -4,15 +4,13 @@
 ---@param player IsoPlayer The player
 ---@param weapon HandWeapon The weapon used
 --- We check that the current weapon is a gun, and that the ammoType is correct
-function TOC_EngineerCheckGun(player, weapon)
+function CheckGunType(player, weapon)
     --- We get the ammoType
     local ammo = weapon:getAmmoType()
     local isAmmoValid = CorrectAmmoType(weapon)
 
-    if weapon:isRanged() then
-        if isAmmoValid then
-            return true
-        end
+    if weapon:isRanged() and isAmmoValid then
+        return true
     end
     return false
 end
@@ -37,15 +35,15 @@ end
 
 ---@param weapon HandWeapon The weapon used
 --- Make the gun jam, reduce condition by `SandboxVars.TOC_Engineer.ConditionReduction` amount
-function SetGunStuff(weapon)
+function SetGunStuff(weapon, bonusOfReduction)
     --- Set the gun to be jammed
     weapon:setJammed(true)
     local condition = weapon:getCondition()
     --- If the condition is less than the reduction, we set the condition to 0 to avoid fuckery
-    if (condition < SandboxVars.TOC_Engineer.ConditionReduction) then
+    if (condition < SandboxVars.TOC_Engineer.ConditionReduction + bonusOfReduction) then
         weapon:setCondition(0)
     else
-        weapon:setCondition(condition - SandboxVars.TOC_Engineer.ConditionReduction)
+        weapon:setCondition(condition - SandboxVars.TOC_Engineer.ConditionReduction + bonusOfReduction)
     end
 end
 
@@ -62,7 +60,7 @@ function GetCaliber(player)
 
     for i = 1, #listOfAmmos do
         if listOfAmmos[i] == "TOCShotgunShellsFire" then
-            Caliber = SandboxVars.TOC_Engineer.ShotgunFireRadius
+            Caliber = SandboxVars.TOC_Engineer.ShotgunFireRadiusSandboxVars.TOC_Engineer.ChanceToJam
 
         elseif listOfAmmos[i] == "TOCBullets45Fire" then
             Caliber = SandboxVars.TOC_Engineer.PistolFireRadius
@@ -78,6 +76,7 @@ end
 We then use `SandboxVars.TOC_Engineer.ReloadLevel` to check if the player is high enough to only have `SandboxVars.TOC_Engineer.ChanceToJam` to jam
 
 Else, garanteed chance of jam & reduced condition as set by the function `SetGunStuff(weapon)`.
+The condition is reduced by `SandboxVars.TOC_Engineer.ConditionReduction` and further reduced by either `SandboxVars.TOC_Engineer.BonusConditionReductionLowLevel` or ` SandboxVars.TOC_Engineer.BonusConditionReductionHighLevel`
 This also use `SandboxVars.TOC_Engineer.AimingLevel` to check wether the fire start at `PlayerPos` or `ZombiePos`.
 
 It then use `StartFire(PosX, PosY, PosZ, Caliber)` to start a fire at the positions. `Caliber` is
@@ -85,7 +84,7 @@ the radius of the fire which is gotten using `GetCaliber(player)`.
 It is either `SandboxVars.TOC_Engineer.PistolFireRadius` or `SandboxVars.TOC_Engineer.ShotgunFireRadius`
 ]]--
 function StartFunc(player, zombie)
-    --- We check the aiming level
+    --- We check the aiming level, used for the pos of the fire and the condition reduction
     local AimLevel = player:getPerkLevel(Perks.Aiming)
     local ReloadLevel = player:getPerkLevel(Perks.Reloading)
 
@@ -101,15 +100,15 @@ function StartFunc(player, zombie)
     local ZombiePosX = zombie:getLlX()
     local ZombiePosY = zombie:getLlY()
     local ZombiePosZ = zombie:getLlZ()
-    if (TOC_EngineerCheckGun(player, weapon) and CorrectAmmoType(weapon)) then
+    if CheckGunType(player, weapon) then
         if (reloadLevel < SandboxVars.TOC_Engineer.ReloadLevel) then
-            --- We set the gun to be jammed
-            SetGunStuff(player:getPrimaryHandItem())
+            --- We set the gun to be jammed and the condition is reduced by a bonus 2
+            SetGunStuff(player:getPrimaryHandItem(), SandboxVars.TOC_Engineer.BonusConditionReductionLowLevel)
         --- Else, only a certain chance to jamm
         else
             local HundredChance = ZombRand(100)
             if (HundredChance <= SandboxVars.TOC_Engineer.ChanceToJam) then
-                SetGunStuff(player:getPrimaryHandItem())
+                SetGunStuff(player:getPrimaryHandItem(), SandboxVars.TOC_Engineer.BonusConditionReductionHighLevel)
             end
         end
 
