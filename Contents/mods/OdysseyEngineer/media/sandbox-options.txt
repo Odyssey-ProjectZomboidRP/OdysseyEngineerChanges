@@ -1,12 +1,13 @@
 VERSION = 1,
 
-SandboxVars.TOC_Engineer.ListAmmos
+SandboxVars.
 SandboxVars.TOC_Engineer.ConditionReduction
 SandboxVars.TOC_Engineer.ChanceToJam
 SandboxVars.TOC_Engineer.PistolFireRadius
 SandboxVars.TOC_Engineer.ReloadLevel
 SandboxVars.TOC_Engineer.ConditionReduction
-SandboxVars.TOC_Engineer.BonusConditionReductionLowLevel SandboxVars.TOC_Engineer.BonusConditionReductionHighLevel
+SandboxVars.TOC_Engineer.BonusConditionReductionLowLevel
+SandboxVars.TOC_Engineer.BonusConditionReductionHighLevel
 SandboxVars.TOC_Engineer.AimingLevel
 SandboxVars.TOC_Engineer.PistolFireRadius
 SandboxVars.TOC_Engineer.ShotgunFireRadius
@@ -14,6 +15,12 @@ SandboxVars.TOC_Engineer.EngineerRecipes
 SandboxVars.TOC_Engineer.EngineerProfession
 SandboxVars.TOC_Engineer.EngineersProfList
 
+option TOC_Engineer.ListAmmos
+{
+    type = string,
+    default = ""
+
+}
 
 option OdysseySOTOChanges.OdysseyRPOutdoorsmanBoredomReduction
 {

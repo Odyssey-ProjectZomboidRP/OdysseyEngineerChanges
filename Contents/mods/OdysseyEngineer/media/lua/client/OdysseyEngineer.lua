@@ -83,7 +83,7 @@ It then use `StartFire(PosX, PosY, PosZ, Caliber)` to start a fire at the positi
 the radius of the fire which is gotten using `GetCaliber(player)`.
 It is either `SandboxVars.TOC_Engineer.PistolFireRadius` or `SandboxVars.TOC_Engineer.ShotgunFireRadius`
 ]]--
-function StartFunc(player, zombie)
+function MainFunc(player, zombie)
     --- We check the aiming level, used for the pos of the fire and the condition reduction
     local AimLevel = player:getPerkLevel(Perks.Aiming)
     local ReloadLevel = player:getPerkLevel(Perks.Reloading)
@@ -144,17 +144,21 @@ It can also be added to `SandboxVars.TOC_Engineer.EngineerProfession` or the lis
 ]]
 ---@return void
 function AddEngineerRecipes(player)
-    if (player:getProfession() == "engineer" or (SandboxVars.TOC_Engineer.EngineerProfession ~= nil and player:getProfession() == SandboxVars.TOC_Engineer.engineerProfession)) then
-        player:setFreeRecipes(SandboxVars.TOC_Engineer.EngineerRecipes)
+    EngineerRecipes = SandboxVars.TOC_Engineer.EngineerRecipes;
+    EngineerProf = SandboxVars.TOC_Engineer.EngineerProfession;
+    EngineerProfList = SandboxVars.TOC_Engineer.EngineersProfList;
+
+
+    if (player:getProfession() == "engineer" or (EngineerProf ~= nil and player:getProfession() == EngineerProf)) then
+        player:setFreeRecipes(EngineerRecipes)
     else if (SandboxVars.TOC_Engineer.EngineersProfList ~= nil) then
-            for i = 1, #SandboxVars.TOC_Engineer.EngineersProfList do
-                if (player:getProfession() == SandboxVars.TOC_Engineer.EngineersProfList[i]) then
-                    player:setFreeRecipes(SandboxVars.TOC_Engineer.EngineerRecipes)
+            for i = 1, #EngineerProfList do
+                if (player:getProfession() == EngineerProfList[i]) then
+                    player:setFreeRecipes(EngineerRecipes)
                 end
             end
     end
 end
-
 end
 
 Events.OnGameBoot(AddEngineerRecipes(player));
