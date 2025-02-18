@@ -1323,4 +1323,6 @@ module Base
         ModelWeaponPart = RedDot RedDot reddot reddot,
         StopPower = 12,
     }
+
+    /****************** TAILORING ********************************/
 }
