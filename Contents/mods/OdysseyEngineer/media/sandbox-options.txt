@@ -15,13 +15,6 @@ SandboxVars.TOC_Engineer.EngineerRecipes
 SandboxVars.TOC_Engineer.EngineerProfession
 SandboxVars.TOC_Engineer.EngineersProfList
 
-option TOC_Engineer.ListAmmos
-{
-    type = string,
-    default = ""
-
-}
-
 option OdysseySOTOChanges.OdysseyRPOutdoorsmanBoredomReduction
 {
     type = double,

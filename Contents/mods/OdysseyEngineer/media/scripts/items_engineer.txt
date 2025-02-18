@@ -1,35 +1,34 @@
 module Base
 {
 
-    /************************* MOLD ******************************/
-
-    item TOC9mmBulletsMoldFire
+    item 9mmBulletsMold
     {
         DisplayCategory = Ammo,
         Weight = 0.5,
         Type = Normal,
-        DisplayName	= Dragon Breath 9mm Bullets Mold,
+        DisplayName	= 9mm Bullets Mold,
+        Icon = BulletMold,
+        MetalValue = 15,
+        Tags = EngineerBulletMold,
+        WorldStaticModel = ShotGunShellsMold_Ground, 
+    }
+
+    item ShotgunShellsMold
+    {
+        DisplayCategory = Ammo,
+        Weight = 0.5,
+        Type = Normal,
+        DisplayName	= Shotgun Shells Mold,
         Icon = BulletMold,
         MetalValue = 15,
         Tags = EngineerBulletMold,
         WorldStaticModel = ShotGunShellsMold_Ground,
     }
 
-    item TOCShotgunShellsMoldFire
-    {
-        DisplayCategory = Ammo,
-        Weight = 0.5,
-        Type = Normal,
-        DisplayName	= Dragon Breath Shotgun Shells Mold,
-        Icon = BulletMold,
-        MetalValue = 15,
-        Tags = EngineerBulletMold,
-        WorldStaticModel = ShotGunShellsMold_Ground,
-    }
 
     /************************* AMMO ******************************/
 
-    item TOCBullets44Fire
+    item TOCBullets44
     {
         DisplayCategory = Ammo,
         Count	=	3,
@@ -41,20 +40,20 @@ module Base
         WorldStaticModel = 9mmRounds,
     }
 
-        item TOCShotgunShellsFire
-        {
-        DisplayCategory = Ammo,
-	Count	=	6,
-	Weight	=	0.05,
-	AlwaysWelcomeGift	=	TRUE,
-	Type	=	Normal,
-	DisplayName	= Dragon Breath Shotgun Shells,
-	Icon	=	ShotgunAmmo,
-	MetalValue = 1,
-	WorldStaticModel = ShotGunShells,
-}
+	item TOCShotgunShells
+	{
+	    DisplayCategory = Ammo,
+		Count	=	6,
+		Weight	=	0.05,
+		AlwaysWelcomeGift	=	TRUE,
+		Type	=	Normal,
+		DisplayName	= Dragon Breath Shotgun Shells,
+		Icon	=	ShotgunAmmo,
+		MetalValue = 1,
+		WorldStaticModel = ShotGunShells,
+	}
 
-    item TOCShotgunShellsBoxFire
+    item TOCShotgunShellsBox
     {
         DisplayCategory = Ammo,
         Weight	=	0.9,
@@ -69,7 +68,7 @@ module Base
 
     /*********************************************** GUNS **********************************/
 
-    item TOCShotgunFire
+    item TOCShotgun
 	{
 	    DisplayCategory = Weapon,
 		ImpactSound	=	null,
@@ -125,7 +124,7 @@ module Base
         ShellFallSound = JS2000ShotgunCartridgeFall,
         MetalValue = 45,
         TwoHandWeapon = TRUE,
-        AmmoBox = TOCShotgunShellsBoxFire,
+        AmmoBox = TOCShotgunShellsBox,
         MaxAmmo = 4,
 		EquipSound = JS2000ShotgunEquip,
 		UnequipSound = JS2000ShotgunUnEquip,
@@ -136,7 +135,7 @@ module Base
         EjectAmmoSound = JS2000ShotgunEjectAmmo,
 		EjectAmmoStopSound = JS2000ShotgunEjectAmmoStop,
         RackSound = JS2000ShotgunRack,
-        AmmoType = Base.TOCShotgunShellsFire,
+        AmmoType = Base.TOCShotgunShells,
         WeaponReloadType = shotgun,
         RackAfterShoot = TRUE,
         JamGunChance = 4,
@@ -150,7 +149,7 @@ module Base
         StopPower = 20,
 	}
 	
-    item TOCShotgun2Fire
+    item TOCShotgun2
 	{
 	    DisplayCategory = Weapon,
 		ImpactSound	=	null,
@@ -206,7 +205,7 @@ module Base
         ShellFallSound = JS2000ShotgunCartridgeFall,
         MetalValue = 45,
         TwoHandWeapon = TRUE,
-        AmmoBox = TOCShotgunShellsBoxFire,
+        AmmoBox = TOCShotgunShellsBox,
         MaxAmmo = 7,
 		EquipSound = JS2000ShotgunEquip,
 		UnequipSound = JS2000ShotgunUnEquip,
@@ -217,7 +216,7 @@ module Base
         EjectAmmoSound = JS2000ShotgunEjectAmmo,
 		EjectAmmoStopSound = JS2000ShotgunEjectAmmoStop,
         RackSound = JS2000ShotgunRack,
-        AmmoType = Base.TOCShotgunShellsFire,
+        AmmoType = Base.TOCShotgunShells,
         WeaponReloadType = shotgun,
         RackAfterShoot = TRUE,
         JamGunChance = 4,
@@ -231,7 +230,7 @@ module Base
         StopPower = 20,
 	}
 	
-	item TOCShotgun2BayonetFire
+	item TOCShotgun2Bayonet
     {
         DisplayCategory = Weapon,
         MaxRange	=	1.37,
@@ -268,7 +267,7 @@ module Base
         BaseSpeed = 0.9,
         DamageCategory = Slash,
         DamageMakeHole = TRUE,
-        AmmoType = Base.TOCShotgunShellsFire,
+        AmmoType = Base.TOCShotgunShells,
 		EnduranceMod	=	1.2,
         BreakSound  =   GardenForkBreak,
         HitFloorSound	=	GardenForkHit,
@@ -285,7 +284,7 @@ module Base
         AttachmentType = Rifle,
     }
 	
-	item TOCShotgunSemiFire
+	item TOCShotgunSemi
 	{
 	    DisplayCategory = Weapon,
 		ImpactSound	=	null,
@@ -341,7 +340,7 @@ module Base
         ShellFallSound = JS2000ShotgunCartridgeFall,
         MetalValue = 45,
         TwoHandWeapon = TRUE,
-        AmmoBox = TOCShotgunShellsBoxFire,
+        AmmoBox = TOCShotgunShellsBox,
         MaxAmmo = 4,
 		EquipSound = JS2000ShotgunEquip,
 		UnequipSound = JS2000ShotgunUnEquip,
@@ -352,7 +351,7 @@ module Base
         EjectAmmoSound = JS2000ShotgunEjectAmmo,
 		EjectAmmoStopSound = JS2000ShotgunEjectAmmoStop,
         RackSound = JS2000ShotgunRack,
-        AmmoType = Base.TOCShotgunShellsFire,
+        AmmoType = Base.TOCShotgunShells,
         WeaponReloadType = shotgunsemi,
         JamGunChance = 6,
         AttachmentType = Rifle,
@@ -366,7 +365,7 @@ module Base
         StopPower = 20,
 	}
 	
-	item TOCShotgunSemi2Fire
+	item TOCShotgunSemi2
 	{
 	    DisplayCategory = Weapon,
 		ImpactSound	=	null,
@@ -422,7 +421,7 @@ module Base
         ShellFallSound = JS2000ShotgunCartridgeFall,
         MetalValue = 45,
         TwoHandWeapon = TRUE,
-        AmmoBox = TOCShotgunShellsBoxFire,
+        AmmoBox = TOCShotgunShellsBox,
         MaxAmmo = 7,
 		EquipSound = JS2000ShotgunEquip,
 		UnequipSound = JS2000ShotgunUnEquip,
@@ -433,7 +432,7 @@ module Base
         EjectAmmoSound = JS2000ShotgunEjectAmmo,
 		EjectAmmoStopSound = JS2000ShotgunEjectAmmoStop,
         RackSound = JS2000ShotgunRack,
-        AmmoType = Base.TOCShotgunShellsFire,
+        AmmoType = Base.TOCShotgunShells,
         WeaponReloadType = shotgunsemi,
         JamGunChance = 6,
         AttachmentType = Rifle,
@@ -447,7 +446,7 @@ module Base
         StopPower = 20,
 	}
 	
-	item TOCShotgunSawnoffFire
+	item TOCShotgunSawnoff
 	{
 		DisplayCategory = Weapon,
 		ImpactSound	=	null,
@@ -508,13 +507,13 @@ module Base
         ShellFallSound = SawnOffJS2000ShotgunCartridgeFall,
         MetalValue = 35,
         TwoHandWeapon = TRUE,
-        AmmoBox = TOCShotgunShellsBoxFire,
+        AmmoBox = TOCShotgunShellsBox,
         MaxAmmo = 4,
 		EquipSound = SawnOffJS2000ShotgunEquip,
 		UnequipSound = SawnOffJS2000ShotgunUnEquip,
         InsertAmmoSound = SawnOffJS2000ShotgunInsertAmmo,
         RackSound = SawnOffJS2000ShotgunRack,
-        AmmoType = Base.TOCShotgunShellsFire,
+        AmmoType = Base.TOCShotgunShells,
         WeaponReloadType = shotgun,
         ModelWeaponPart = ShellHolder ShellHolder shellholder shellholder,
 		ModelWeaponPart = ShellStraps ShellLoops_Shotgun bulletloops bulletloops,
@@ -528,7 +527,7 @@ module Base
 	}
 
 	
-	item TOCShotgunSawnoffNoStockFire
+	item TOCShotgunSawnoffNoStock
 	{
 		DisplayCategory = Weapon,
 		ImpactSound	=	null,
@@ -589,13 +588,13 @@ module Base
         ShellFallSound = SawnOffJS2000ShotgunCartridgeFall,
         MetalValue = 35,
         TwoHandWeapon = TRUE,
-        AmmoBox = TOCShotgunShellsBoxFire,
+        AmmoBox = TOCShotgunShellsBox,
         MaxAmmo = 4,
 		EquipSound = SawnOffJS2000ShotgunEquip,
 		UnequipSound = SawnOffJS2000ShotgunUnEquip,
         InsertAmmoSound = SawnOffJS2000ShotgunInsertAmmo,
         RackSound = SawnOffJS2000ShotgunRack,
-        AmmoType = Base.TOCShotgunShellsFire,
+        AmmoType = Base.TOCShotgunShells,
         WeaponReloadType = shotgun,
 		ModelWeaponPart = ShellHolder ShellHolder shellholder shellholder,
         RackAfterShoot = TRUE,
@@ -605,7 +604,7 @@ module Base
 		Tags = BlockSling;BlockIrons,
 	}
 	
-	item TOCDoubleBarrelShotgunFire
+	item TOCDoubleBarrelShotgun
     {
         DisplayCategory = Weapon,
         ImpactSound	=	null,
@@ -660,7 +659,7 @@ module Base
         BreakSound  =   DoubleBarrelShotgunBreak,
         MetalValue = 45,
         TwoHandWeapon = TRUE,
-        AmmoBox = TOCShotgunShellsBoxFire,
+        AmmoBox = TOCShotgunShellsBox,
         MaxAmmo = 2,
 		EquipSound = DoubleBarrelShotgunEquip,
 		UnequipSound = DoubleBarrelShotgunUnEquip,
@@ -671,7 +670,7 @@ module Base
 		EjectAmmoStartSound = DoubleBarrelShotgunEjectAmmoStart,
 		EjectAmmoStopSound = DoubleBarrelShotgunEjectAmmoStop,
         ShellFallSound = DoubleBarrelShotgunCartridgeFall,
-        AmmoType = Base.TOCShotgunShellsFire,
+        AmmoType = Base.TOCShotgunShells,
         WeaponReloadType = breechloader,
 		ModelWeaponPart = ShellStraps ShellLoops bulletloops bulletloops,
 		ModelWeaponPart = Sling Sling_Doublebarrel sling sling,
@@ -685,7 +684,7 @@ module Base
         StopPower = 40,
     }
 	
-	item TOCDoubleBarrelShotgunSawnoffFire
+	item TOCDoubleBarrelShotgunSawnoff
     {
 		DisplayCategory = Weapon,
         ImpactSound	=	null,
@@ -738,7 +737,7 @@ module Base
         BreakSound  =   SawnOffDoubleBarrelShotgunBreak,
         MetalValue = 45,
         TwoHandWeapon = TRUE,
-        AmmoBox = TOCShotgunShellsBoxFire,
+        AmmoBox = TOCShotgunShellsBox,
         MaxAmmo = 2,
 		EquipSound = SawnOffDoubleBarrelShotgunEquip,
 		UnequipSound = SawnOffDoubleBarrelShotgunUnEquip,
@@ -749,7 +748,7 @@ module Base
 		EjectAmmoStartSound = SawnOffDoubleBarrelShotgunEjectAmmoStart,
 		EjectAmmoStopSound = SawnOffDoubleBarrelShotgunEjectAmmoStop,
         ShellFallSound = SawnOffDoubleBarrelShotgunCartridgeFall,
-        AmmoType = Base.TOCShotgunShellsFire,
+        AmmoType = Base.TOCShotgunShells,
         WeaponReloadType = breechloader,
 		ModelWeaponPart = ShellStraps ShellLoops bulletloops bulletloops,
         JamGunChance = 0,
@@ -762,7 +761,7 @@ module Base
 		Tags = BlockSling;BlockIrons,
         }
 	
-	item TOCDoubleBarrelShotgunSawnoffNoStockFire
+	item TOCDoubleBarrelShotgunSawnoffNoStock
     {
 		DisplayCategory = Weapon,
         ImpactSound	=	null,
@@ -788,7 +787,7 @@ module Base
         IsAimedFirearm	=	TRUE,
         DoorDamage	=	30,
         UseEndurance	=	FALSE,
-        DisplayName	=	Dragon Breath Sawn Off Double Barrel Shotgun,
+        DisplayName	=	Sawn Off Double Barrel Shotgun,
         MinRange	=	0.67,
         SwingTime	=	2,
         AngleFalloff	=	TRUE,
@@ -815,7 +814,7 @@ module Base
         BreakSound  =   SawnOffDoubleBarrelShotgunBreak,
         MetalValue = 45,
         TwoHandWeapon = TRUE,
-        AmmoBox = TOCShotgunShellsBoxFire,
+        AmmoBox = TOCShotgunShellsBox,
         MaxAmmo = 2,
 		EquipSound = SawnOffDoubleBarrelShotgunEquip,
 		UnequipSound = SawnOffDoubleBarrelShotgunUnEquip,
@@ -838,7 +837,7 @@ module Base
 		Tags = BlockSling;BlockIrons,
         }
 		
-	item TOCSpas12Fire
+	item TOCSpas12
     {
 		DisplayCategory = Weapon,
 		ImpactSound	=	null,
@@ -863,7 +862,7 @@ module Base
 		DoorDamage	=	20,
 		UseEndurance	=	FALSE,
         SwingAnim	=	Rifle,
-		DisplayName	=	Dragon Breath SP-12 Shotgun,
+		DisplayName	=	SP-12 Shotgun,
 		MinRange	=	0.61,
 		SwingTime	=	1,
         MultipleHitConditionAffected	=	FALSE,
@@ -921,7 +920,7 @@ module Base
         StopPower = 20,
 	}
 	
-	item TOCSpas12FoldedFire
+	item TOCSpas12Folded
     {
 		DisplayCategory = Weapon,
 		ImpactSound	=	null,
@@ -946,7 +945,7 @@ module Base
 		DoorDamage	=	20,
 		UseEndurance	=	FALSE,
         SwingAnim	=	Rifle,
-		DisplayName	=	Dragon Breath SP-12 Shotgun,
+		DisplayName	=	SP-12 Shotgun,
 		MinRange	=	0.61,
 		SwingTime	=	1,
         MultipleHitConditionAffected	=	FALSE,
@@ -986,12 +985,12 @@ module Base
         BreakSound = M14Break,
         TwoHandWeapon = TRUE,
         MetalValue = 45,
-        AmmoType = Base.TOCShotgunShellsFire,
+        AmmoType = Base.TOCShotgunShells,
         WeaponReloadType = shotgunsemi,
         JamGunChance = 5,
         AttachmentType = Rifle,
         FireMode = Single,
-        AmmoBox = TOCShotgunShellsBoxFire,
+        AmmoBox = TOCShotgunShellsBox,
         MaxAmmo = 7,
         ModelWeaponPart = ChokeTubeFull ChokeTube choketube choketube,
         ModelWeaponPart = ChokeTubeImproved ChokeTube choketube choketube,
@@ -1004,7 +1003,7 @@ module Base
         StopPower = 20,
 		}
 		
-	item TOCShotgunSilentFire
+	item TOCShotgunSilent
 	{
 	    DisplayCategory = Weapon,
 		ImpactSound	=	null,
@@ -1032,7 +1031,7 @@ module Base
 		IsAimedFirearm	=	TRUE,
 		DoorDamage	=	20,
 		UseEndurance	=	FALSE,
-		DisplayName	=	Dragon Breath Coin Flip,
+		DisplayName	=	Coin Flip,
 		MinRange	=	0.61,
 		SwingTime	=	2,
 		AngleFalloff	=	TRUE,
@@ -1060,7 +1059,7 @@ module Base
         ShellFallSound = JS2000ShotgunCartridgeFall,
         MetalValue = 45,
         TwoHandWeapon = TRUE,
-        AmmoBox = TOCShotgunShellsBoxFire,
+        AmmoBox = TOCShotgunShellsBox,
         MaxAmmo = 4,
 		EquipSound = JS2000ShotgunEquip,
 		UnequipSound = JS2000ShotgunUnEquip,
@@ -1071,7 +1070,7 @@ module Base
         EjectAmmoSound = JS2000ShotgunEjectAmmo,
 		EjectAmmoStopSound = JS2000ShotgunEjectAmmoStop,
         RackSound = JS2000ShotgunRack,
-        AmmoType = Base.TOCShotgunShellsFire,
+        AmmoType = Base.TOCShotgunShells,
         WeaponReloadType = shotgunsemi,
         ModelWeaponPart = ShellHolder ShellHolder shellholder shellholder,
 		ModelWeaponPart = ShellStraps ShellLoops_Shotgun bulletloops bulletloops,
@@ -1083,7 +1082,89 @@ module Base
         StopPower = 20,
 	}
 
-    item TOCRevolverFire
+    item TOCPistol3
+    {
+        DisplayCategory = Weapon,
+        ImpactSound	=	null,
+        MaxRange	=	10,
+        WeaponSprite	=	Handgun,
+        SoundVolume	=	75,
+        MinAngle	=	0.95,
+        Type	=	Weapon,
+        MinimumSwingTime	=	0.5,
+        ToHitModifier	=	1.5,
+        NPCSoundBoost	=	1.5,
+        KnockBackOnNoDeath	=	TRUE,
+        Ranged	=	TRUE,
+        SwingAmountBeforeImpact	=	0,
+        ProjectileCount	=	1,
+        ConditionLowerChanceOneIn	=	60,
+        Weight	=	1.5,
+        SplatNumber	=	3,
+        PushBackMod	=	0.3,
+        SubCategory	=	Firearm,
+        ConditionMax	=	10,
+        ShareDamage	=	FALSE,
+        MaxHitCount	=	1,
+        IsAimedFirearm	=	TRUE,
+        DoorDamage	=	5,
+        UseEndurance	=	FALSE,
+        SwingAnim	=	Handgun,
+        DisplayName	=	D-E Pistol,
+        MinRange	=	0.61,
+        SwingTime	=	0.5,
+        MultipleHitConditionAffected	=	FALSE,
+		BringToBearSound = DesertEagleBringToBear,
+        SwingSound	=	DesertEagleShoot,
+        HitSound = BulletHitBody,
+		ClickSound = DesertEagleJam,
+        SoundRadius	=	70,
+        MinDamage	=	1,
+        MaxDamage	=	1.9,
+        SplatSize	=	3,
+        KnockdownMod	=	2,
+        SplatBloodOnNoDeath	=	TRUE,
+        Icon	=	HandGun,
+        RunAnim	=	Run_Weapon2,
+        CriticalChance	=	20,
+        CritDmgMultiplier = 4,
+        AimingPerkCritModifier = 10,
+        AimingPerkRangeModifier = 1.5,
+        HitChance = 20,
+        AimingPerkHitChanceModifier = 12,
+        AimingPerkMinAngleModifier = 0.05,
+        RecoilDelay = 32,
+        SoundGain = 1.5,
+        ClipSize = 15,
+        ReloadTime = 30,
+        AimingTime = 30,
+        BreakSound  =   DesertEagleBreak,
+        MetalValue = 30,
+        AmmoBox = Bullets44Box,
+        MaxAmmo = 8,
+		EquipSound = DesertEagleEquip,
+		UnequipSound = DesertEagleUnequip,
+        InsertAmmoSound = DesertEagleInsertAmmo,
+        EjectAmmoSound = DesertEagleEjectAmmo,
+		InsertAmmoStartSound = DesertEagleInsertAmmoStart,
+		InsertAmmoStopSound = DesertEagleInsertAmmoStop,
+		EjectAmmoStartSound = DesertEagleEjectAmmoStart,
+		EjectAmmoStopSound = DesertEagleEjectAmmoStop,
+        ShellFallSound = DesertEagleCartridgeFall,
+        RackSound = DesertEagleRack,
+        MagazineType = Base.44Clip,
+        AmmoType = Base.Bullets44,
+        WeaponReloadType = handgun,
+        JamGunChance = 2,
+        AttachmentType = Holster,
+        ModelWeaponPart = RedDot RedDot reddot reddot,
+        ModelWeaponPart = GunLight GunLight gunlight gunlight,
+        ModelWeaponPart = IronSight IronSight scope scope,
+        ModelWeaponPart = Laser Laser laser laser,
+        StopPower = 9,
+    }
+
+    item TOCRevolver
     {
         DisplayCategory = Weapon,
         ImpactSound	=	null,
@@ -1112,7 +1193,7 @@ module Base
         DoorDamage	=	5,
         UseEndurance	=	FALSE,
         SwingAnim	=	Handgun,
-        DisplayName	=	Dragon Breath M625 Revolver,
+        DisplayName	=	M625 Revolver,
         MinRange	=	0.61,
         SwingTime	=	0.5,
         MultipleHitConditionAffected	=	FALSE,
@@ -1137,7 +1218,7 @@ module Base
         AimingTime = 25,
         BreakSound = M625Break,
         MetalValue = 30,
-        AmmoBox = TOCBullets45BoxFire,
+        AmmoBox = Bullets45Box,
         MaxAmmo = 6,
 		BringToBearSound = M625BringToBear,
         SwingSound = M625Shoot,
@@ -1152,7 +1233,7 @@ module Base
 		EjectAmmoStartSound = M625EjectAmmoStart,
 		EjectAmmoStopSound = M625EjectAmmoStop,
         ShellFallSound = M625CartridgeFall,
-        AmmoType = Base.TOCBullets45Fire,
+        AmmoType = Base.Bullets45,
         WeaponReloadType = revolver,
         JamGunChance = 0,
         haveChamber = FALSE,
@@ -1163,7 +1244,7 @@ module Base
         StopPower = 9,
     }
 
-    item TOCRevolver_LongFire
+    item TOCRevolver_Long
     {
         DisplayCategory = Weapon,
         ImpactSound	=	null,
@@ -1191,7 +1272,7 @@ module Base
         DoorDamage	=	5,
         UseEndurance	=	FALSE,
         SwingAnim	=	Handgun,
-        DisplayName	=	Dragon Breath Magnum,
+        DisplayName	=	Magnum,
         MinRange	=	0.61,
         SwingTime	=	0.5,
         MultipleHitConditionAffected	=	FALSE,
@@ -1217,7 +1298,7 @@ module Base
         AimingTime = 40,
         BreakSound = MagnumBreak,
         MetalValue = 30,
-        AmmoBox = TOCBullets44BoxFire,
+        AmmoBox = Bullets44Box,
         MaxAmmo = 6,
 		BringToBearSound = MagnumBringToBear,
         SwingSound = MagnumShoot,
@@ -1232,7 +1313,7 @@ module Base
 		EjectAmmoStartSound = MagnumEjectAmmoStart,
 		EjectAmmoStopSound = MagnumEjectAmmoStop,
         ShellFallSound = MagnumCartridgeFall,
-        AmmoType = Base.TOCBullets44Fire,
+        AmmoType = Base.Bullets44,
         WeaponReloadType = revolver,
         JamGunChance = 0,
         haveChamber = FALSE,
