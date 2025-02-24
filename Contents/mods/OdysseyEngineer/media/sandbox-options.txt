@@ -1,7 +1,8 @@
 VERSION = 1,
 
-SandboxVars.
 SandboxVars.TOC_Engineer.ConditionReduction
+SandboxVars.TOC.ConditionReductionSkillBelow
+SandboxVars.TOC.ConditionReductionSkillHigher
 SandboxVars.TOC_Engineer.ChanceToJam
 SandboxVars.TOC_Engineer.PistolFireRadius
 SandboxVars.TOC_Engineer.ReloadLevel
